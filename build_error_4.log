@@ -1,0 +1,17 @@
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ΓÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Failed to compile.
+
+./lib/auth.ts:124:30
+Type error: Property 'id' does not exist on type '{ name?: string | null | undefined; email?: string | null | undefined; image?: string | null | undefined; }'.
+
+  122 |         async session({ session, token }) {
+  123 |             if (session.user) {
+> 124 |                 session.user.id = token.sub as string;
+      |                              ^
+  125 |                 session.user.provider = token.provider as string;
+  126 |             }
+  127 |             return session;
+Next.js build worker exited with code: 1 and signal: null
+

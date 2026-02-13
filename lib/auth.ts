@@ -1,9 +1,18 @@
 // lib/auth.ts
 // NextAuth Configuration - Shared options for server-side usage
 
-import { NextAuthOptions } from "next-auth";
+import { NextAuthOptions, DefaultSession } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import type { OAuthConfig } from "next-auth/providers/oauth";
+
+declare module "next-auth" {
+    interface Session {
+        user: {
+            id: string;
+            provider?: string;
+        } & DefaultSession["user"]
+    }
+}
 
 interface LinkedInProfile {
     sub: string;
